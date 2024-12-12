@@ -24,7 +24,7 @@ def import_and_predict(image_data, model):
     size = (128, 128)  # Adjust to match your model's input size
 
     # Resize the image
-    image = ImageOps.fit(image_data, size, Image.ANTIALIAS)
+    image = ImageOps.fit(image_data, size, Image.Resampling.LANCZOS)
     img = np.asarray(image)
     img = cv2.resize(img, size, interpolation=cv2.INTER_NEAREST)
 
